@@ -35,6 +35,19 @@ if (loginForm) {
   });
 }
 
+if (logoutButton) {
+  logoutButton.addEventListener('click', async () => {
+    try {
+      await signOut(auth);
+      alert('Usuário deslogado com sucesso!');
+      window.location.href = 'login.html';
+    } catch (error) {
+      console.error('Erro ao fazer logout: ', error);
+      alert('Erro ao fazer logout.');
+    }
+  });
+}
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // Usuário está logado
