@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="dashboard.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold mb-6 text-center">Dashboard de Pedidos</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold mb-2 text-center">Total de Vendas</h2>
+        <canvas id="totalSalesChart"></canvas>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold mb-2 text-center">Margem de Lucro</h2>
+        <canvas id="profitMarginChart"></canvas>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold mb-2 text-center">Pedidos por Fornecedor</h2>
+        <canvas id="ordersBySupplierChart"></canvas>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold mb-2 text-center">Gastos vs Lucro</h2>
+        <canvas id="expenditureVsProfitChart"></canvas>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-xl font-semibold mb-2 text-center">Vendas Semanais</h2>
+        <canvas id="weeklySalesChart"></canvas>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

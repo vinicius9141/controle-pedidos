@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inserir Dados Semanais</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="weekly-input.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+    <h1 class="text-3xl font-bold mb-6 text-center">Inserir Dados Semanais</h1>
+    <form id="weekly-form" class="space-y-4">
+      <div>
+        <label for="week" class="block text-gray-700 font-semibold mb-2">Selecione a Semana</label>
+        <input type="week" id="week" class="w-full p-2 border border-gray-300 rounded-md">
+      </div>
+      <div>
+        <label for="pieces-sold" class="block text-gray-700 font-semibold mb-2">Quantidade de Peças Vendidas</label>
+        <input type="number" id="pieces-sold" class="w-full p-2 border border-gray-300 rounded-md">
+      </div>
+      <div>
+        <label for="total-value" class="block text-gray-700 font-semibold mb-2">Valor Total Vendido (R$)</label>
+        <input type="number" id="total-value" class="w-full p-2 border border-gray-300 rounded-md">
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300">Salvar Dados</button>
+    </form>
+  </div>
+</body>
+</html>
