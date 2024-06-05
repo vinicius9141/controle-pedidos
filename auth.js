@@ -1,6 +1,9 @@
-import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "./firebaseConfig.js";
+import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from './firebaseConfig.js';
 
 const registerForm = document.getElementById('register-form');
+const loginForm = document.getElementById('login-form');
+const logoutButton = document.getElementById('logout-button');
+
 if (registerForm) {
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -17,7 +20,6 @@ if (registerForm) {
     }
   });
 }
-const loginForm = document.getElementById('login-form');
 
 if (loginForm) {
   loginForm.addEventListener('submit', async (e) => {
@@ -47,14 +49,3 @@ if (logoutButton) {
     }
   });
 }
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // Usuário está logado
-  } else {
-    // Usuário não está logado, redirecionar para login
-    if (window.location.pathname !== '/login.html' && window.location.pathname !== '/register.html') {
-      window.location.href = 'login.html';
-    }
-  }
-});
