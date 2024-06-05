@@ -116,7 +116,7 @@ Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para m
 
 ## Contato
 
-- Nome: Seu Nome
-- Email: seu-email@example.com
-- GitHub: [seu-usuario](https://github.com/seu-usuario)
+- Nome: Vinicius Arruda
+- Email: vinicius9141@gmail.com
+- GitHub: [vinicius9141](https://github.com/vinicius9141)
 
