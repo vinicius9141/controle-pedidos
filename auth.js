@@ -2,37 +2,36 @@ import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAut
 
 const registerForm = document.getElementById('register-form');
 if (registerForm) {
-  registerForm.addEventListener('submit', (e) => {
+  registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert('Registrado com sucesso!');
-        window.location.href = 'index.html';
-      })
-      .catch((error) => {
-        console.error("Erro ao registrar: ", error);
-        alert('Erro ao registrar.');
-      });
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert('Usuário registrado com sucesso!');
+      window.location.href = 'index.html';
+    } catch (error) {
+      console.error('Erro ao registrar usuário: ', error);
+      alert('Erro ao registrar usuário.');
+    }
   });
 }
-
 const loginForm = document.getElementById('login-form');
+
 if (loginForm) {
-  loginForm.addEventListener('submit', (e) => {
+  loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert('Login bem-sucedido!');
-        window.location.href = 'index.html';
-      })
-      .catch((error) => {
-        console.error("Erro ao fazer login: ", error);
-        alert('Erro ao fazer login.');
-      });
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.href = 'index.html';
+    } catch (error) {
+      console.error('Erro ao fazer login: ', error);
+      alert('Erro ao fazer login.');
+    }
   });
 }
 
